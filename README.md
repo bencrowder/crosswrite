@@ -1,6 +1,6 @@
 ## Crosswrite
 
-Proof-of-concept for transcription via HTML5 audio and Javascript. Uses jQuery and the jQuery hotkeys plugin. Tested in Chrome. Keyboard shortcuts aren't ideal.
+Proof-of-concept for transcription via HTML5 audio and Javascript. Uses jQuery and the jQuery hotkeys plugin. Tested in Chrome and Safari. Doesn't work in Firefox. And the keyboard shortcuts are far from ideal.
 
 ### Keyboard shortcuts
 
