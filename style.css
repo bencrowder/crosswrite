@@ -1,0 +1,13 @@
+body						{ margin: 0px; padding: 0px; border-top: solid 10px #000; font-family: "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+article						{ margin: 50px auto; width: 700px; }
+article small				{ display: block; margin-top: 10px; font-size: .7em; }
+article small ul			{ padding-left: 0; list-style: none; -webkit-column-count: 3; -webkit-column-gap: 20px; -moz-column-count: 3; -moz-column-gap: 20px; column-count: 3; column-gap: 20px; }
+
+h1							{ width: 700px; margin: 20px auto; letter-spacing: -0.03em; font-size: 24px; }
+
+#audio_container			{ margin-bottom: 2em; }
+
+audio#audio 				{ width: 690px; }
+
+textarea#transcript			{ height: 300px; font-size: 1em; padding: 5px; width: 690px; line-height: 1.4em; }
