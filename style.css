@@ -3,7 +3,7 @@ body						{ margin: 0px; padding: 0px; border-top: solid 20px #4d6270; font-fami
 #page						{ width: 900px; margin: 50px auto; }
 h1							{ width: 900px; margin: 20px auto; letter-spacing: -0.03em; font-size: 24px; }
 
-sidebar						{ width: 250px; float: left; margin-right: 49px; border-right: solid 1px #999; }
+sidebar						{ width: 272px; float: left; }
 
 sidebar h2					{ font-size: 12px; margin: 0em 2em 0 0; margin-bottom: 0; border-bottom: solid 2px #999; }
 ul#files					{ list-style: none; margin: 0em 2em 2em 0; padding: 0; font-size: 12px; max-height: 250px; overflow-y: scroll; padding-right: 2px; }
@@ -16,15 +16,14 @@ input[type="file"]			{ margin-bottom: 5px; }
 .button						{ color: #fff; padding: 5px 8px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; font-size: 12px; font-weight: bold; text-decoration: none; border: none; background: #4d6270; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#98acba), to(#4d6270)); background: -moz-linear-gradient(#98acba, #4d6270); }
 .button:hover				{ cursor: pointer; }
 
-article						{ width: 600px; float: left; }
+article						{ width: 600px; float: left; padding-left: 27px; border-left: solid 1px #ddd; }
 article small				{ display: block; margin-top: 10px; font-size: .7em; }
 article small ul			{ padding-left: 0; list-style: none; -webkit-column-count: 3; -webkit-column-gap: 20px; -moz-column-count: 3; -moz-column-gap: 20px; column-count: 3; column-gap: 20px; }
-
 
 #audio_container			{ margin-bottom: 2em; }
 #audio_container h2			{ margin: 0; margin-bottom: 5px; font-size: 14px; color: #999; }
 
-audio#audio 				{ width: 590px; }
+audio#audio 				{ width: 610px; }
 
 textarea#transcript			{ height: 250px; font-size: 1.2em; padding: 10px; width: 590px; line-height: 1.4em; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; font-family: Georgia, serif; }
 
