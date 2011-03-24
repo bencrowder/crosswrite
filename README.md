@@ -1,6 +1,13 @@
 ## Crosswrite
 
-Proof-of-concept for transcription via HTML5 audio and Javascript. Uses jQuery and the jQuery hotkeys plugin. Tested in Chrome and Safari. Doesn't work in Firefox. And the keyboard shortcuts are far from ideal.
+Audio transcription app. Uses HTML5 audio and Javascript, along with jQuery and the jQuery hotkeys plugin. Tested in Chrome and Safari. Doesn't work in Firefox. And the keyboard shortcuts are far from ideal.
+
+
+### Installation
+
+1. Put the files somewhere.
+2. Create two directories, audio/ and transcripts/, and give your web server write rights to them. (For example, `chown apache.apache audio/ transcripts/`, or `chgrp apache audio/ transcripts/; chmod g+w audio/ transcripts/`.)
+
 
 ### Keyboard shortcuts
 

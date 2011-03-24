@@ -10,6 +10,7 @@ function play_toggle() {
 
 function rewind() {
 	audio = $("audio#audio")[0];
+	console.log("here");
 	audio.currentTime = audio.currentTime - 5;
 	return false;
 }
@@ -56,6 +57,24 @@ function dec_volume() {
 	return false;
 }
 
+function load_file(filename) {
+	audio = $("audio#audio")[0];
+	audio.src = "audio/" + filename;
+	$("#audio_container h2").html(filename + " (loading...)");
+
+	$(audio).bind('progress', function() {
+	    var loaded = parseInt(((audio.buffered.end(0) / audio.duration) * 100), 10);
+		$("#audio_container h2").html(filename + " (loading, " + loaded + "%)");
+		if (loaded == 100) {
+			var minutes = audio.duration / 60;
+			var seconds = audio.duration % 60;
+			$("#audio_container h2").html(filename + " (" + minutes + ":" + seconds + ")");
+		}
+	});
+
+	$("#transcript").focus();
+}
+
 // MAIN
 
 $(document).ready(function() {
@@ -77,4 +96,8 @@ $(document).ready(function() {
 	// Volume controls
 	$("#transcript").bind("keydown", "ctrl+1", inc_volume);
 	$("#transcript").bind("keydown", "ctrl+2", dec_volume);
+
+	$("ul#files li").click(function() {
+		load_file($(this).html());
+	});
 });
