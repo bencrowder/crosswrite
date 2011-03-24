@@ -10,7 +10,6 @@ function play_toggle() {
 
 function rewind() {
 	audio = $("audio#audio")[0];
-	console.log("here");
 	audio.currentTime = audio.currentTime - 5;
 	return false;
 }
@@ -60,21 +59,33 @@ function dec_volume() {
 function load_file(filename) {
 	audio = $("audio#audio")[0];
 	audio.src = "audio/" + filename;
-	$("#audio_container h2").html(filename + " (loading...)");
+	$("#audio_container h2").html(filename);
 
-	$(audio).bind('progress', function() {
-	    var loaded = parseInt(((audio.buffered.end(0) / audio.duration) * 100), 10);
-		$("#audio_container h2").html(filename + " (loading, " + loaded + "%)");
-		if (loaded == 100) {
-			var minutes = audio.duration / 60;
-			var seconds = audio.duration % 60;
-			$("#audio_container h2").html(filename + " (" + minutes + ":" + seconds + ")");
-		}
-	});
+	$.post(siteroot + "/get_transcript.php", { filename: filename },
+			function(data) {
+				if (data.statuscode == "success") {
+					$("#transcript").html(data.text);
+				} else {
+					$("#transcript").html("[Error loading text.]");
+				}
+			}, "json");
 
 	$("#transcript").focus();
 }
 
+function save_current_file() {
+	var filename = $("#audio_container h2").html();
+	var text = $("#transcript").html();
+
+	$.post(siteroot + "/save_transcript.php", { filename: filename, text: text },
+			function(data) {
+				if (data.statuscode == "success") {
+					$("#error").hide();
+				} else {
+					$("#error").show();
+				}
+			}, "json");
+}
 // MAIN
 
 $(document).ready(function() {

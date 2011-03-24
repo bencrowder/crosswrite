@@ -7,6 +7,7 @@ Audio transcription app. Uses HTML5 audio and Javascript, along with jQuery and 
 
 1. Put the files somewhere.
 2. Create two directories, audio/ and transcripts/, and give your web server write rights to them. (For example, `chown apache.apache audio/ transcripts/`, or `chgrp apache audio/ transcripts/; chmod g+w audio/ transcripts/`.)
+3. Copy `config.sample.js` to `config.js` and edit.
 
 
 ### Keyboard shortcuts

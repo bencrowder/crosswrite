@@ -23,9 +23,10 @@ closedir($handle);
 		<link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8" />
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js" type="text/javascript"></script>
-		<script src="jquery.hotkeys.js" type="text/javascript"></script>
 
-		<script src="crosswrite.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.hotkeys.js" type="text/javascript"></script>
+		<script src="js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/crosswrite.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
 		<h1>Crosswrite</h1>
@@ -67,6 +68,8 @@ closedir($handle);
 						<li><b>Decrease volume:</b> ctrl+2</li>
 					</ul>
 				</small>
+
+				<div id="error">Error saving text.</div>
 			</article>
 		</div>
 	</body>
