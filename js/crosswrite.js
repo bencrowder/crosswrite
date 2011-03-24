@@ -70,12 +70,12 @@ function dec_volume() {
 function load_file(filename) {
 	audio = $("audio#audio")[0];
 	audio.src = "audio/" + filename;
-	$("#audio_container h2").html(filename);
 
 	$.post(siteroot + "/get_transcript.php", { filename: filename },
 			function(data) {
 				if (data.statuscode == "success") {
-					$("#transcript").html(stripslashes(data.text));
+					$("#audio_container h2").html(filename);
+					$("#transcript").val(stripslashes(data.text));
 
 					if (intervalId) {
 						clearInterval(intervalId);
@@ -84,7 +84,7 @@ function load_file(filename) {
 					// save current work every second
 					intervalId = setInterval(save_current_file, 1000);
 				} else {
-					$("#transcript").html("[Error loading text.]");
+					$("#transcript").val("[Error loading text.]");
 				}
 			}, "json");
 
@@ -93,7 +93,7 @@ function load_file(filename) {
 
 function save_current_file() {
 	var filename = $("#audio_container h2").html();
-	var text = $("textarea#transcript").val();
+	var text = $("#transcript").val();
 
 	if (loaded) {
 		$.post(siteroot + "/save_transcript.php", { filename: filename, text: text },
@@ -130,6 +130,10 @@ $(document).ready(function() {
 
 	$("ul#files li").click(function() {
 		load_file($(this).html());
+
+		$("ul#files li.selected").removeClass("selected");
+		$(this).addClass("selected");
+
 		loaded = true;
 	});
 });
