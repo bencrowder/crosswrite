@@ -2,6 +2,9 @@
 
 Audio transcription app. Uses HTML5 audio and Javascript, along with jQuery and the jQuery hotkeys plugin. Tested in Chrome and Safari. Doesn't work in Firefox. And the keyboard shortcuts are far from ideal.
 
+### Notes
+
+* Text is saved every second.
 
 ### Installation
 
