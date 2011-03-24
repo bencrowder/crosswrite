@@ -25,6 +25,6 @@ article small ul			{ padding-left: 0; list-style: none; -webkit-column-count: 3;
 
 audio#audio 				{ width: 590px; }
 
-textarea#transcript			{ height: 300px; font-size: 1.2em; padding: 10px; width: 590px; line-height: 1.4em; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; font-family: Georgia, serif; }
+textarea#transcript			{ height: 250px; font-size: 1.2em; padding: 10px; width: 590px; line-height: 1.4em; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; font-family: Georgia, serif; }
 
 #error						{ background: #fee; color: #900; font-weight: bold; font-size: 12px; padding: 10px; width: 590px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; display: none; }

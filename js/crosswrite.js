@@ -1,3 +1,14 @@
+var loaded = false;
+var intervalId;
+
+function stripslashes(str) {
+	str = str.replace(/\\'/g, '\'');
+	str = str.replace(/\\"/g, '"');
+	str = str.replace(/\\\\/g, '\\');
+
+	return str;
+}
+
 function play_toggle() {
 	audio = $("audio#audio")[0];
 	if (audio.paused) {
@@ -64,7 +75,14 @@ function load_file(filename) {
 	$.post(siteroot + "/get_transcript.php", { filename: filename },
 			function(data) {
 				if (data.statuscode == "success") {
-					$("#transcript").html(data.text);
+					$("#transcript").html(stripslashes(data.text));
+
+					if (intervalId) {
+						clearInterval(intervalId);
+					}
+
+					// save current work every second
+					intervalId = setInterval(save_current_file, 1000);
 				} else {
 					$("#transcript").html("[Error loading text.]");
 				}
@@ -75,16 +93,18 @@ function load_file(filename) {
 
 function save_current_file() {
 	var filename = $("#audio_container h2").html();
-	var text = $("#transcript").html();
+	var text = $("textarea#transcript").val();
 
-	$.post(siteroot + "/save_transcript.php", { filename: filename, text: text },
-			function(data) {
-				if (data.statuscode == "success") {
-					$("#error").hide();
-				} else {
-					$("#error").show();
-				}
-			}, "json");
+	if (loaded) {
+		$.post(siteroot + "/save_transcript.php", { filename: filename, text: text },
+				function(data) {
+					if (data.statuscode == "success") {
+						$("#error").hide();
+					} else {
+						$("#error").show();
+					}
+				}, "json");
+	}
 }
 // MAIN
 
@@ -110,5 +130,6 @@ $(document).ready(function() {
 
 	$("ul#files li").click(function() {
 		load_file($(this).html());
+		loaded = true;
 	});
 });
