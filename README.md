@@ -17,7 +17,7 @@ Audio transcription app. Uses HTML5 audio and Javascript, along with jQuery and 
 
 #### Play/pause
 
-* Play/pause: `ctrl+p`
+* Play/pause: `shift+space`
 
 #### Rewind/fast forward
 
