@@ -112,7 +112,7 @@ $(document).ready(function() {
 	$("#transcript").focus();
 
 	// Play/pause toggle
-	$("#transcript").bind("keydown", "ctrl+p", play_toggle);
+	$("#transcript").bind("keydown", "shift+space", play_toggle);
 
 	// Rewind and fast forward
 	$("#transcript").bind("keydown", "ctrl+h", rewind_30);	

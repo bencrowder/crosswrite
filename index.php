@@ -57,7 +57,7 @@ closedir($handle);
 
 				<small>
 					<ul>
-						<li><b>Play/pause:</b> ctrl+p</li>
+						<li><b>Play/pause:</b> shift+space</li>
 						<li><b>Rewind 5 seconds:</b> ctrl+j</li>
 						<li><b>Fast forward 5 seconds:</b> ctrl+k</li>
 						<li><b>Rewind 30 seconds:</b> ctrl+h</li>
