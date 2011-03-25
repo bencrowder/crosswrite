@@ -115,18 +115,26 @@ $(document).ready(function() {
 	$("#transcript").bind("keydown", "shift+space", play_toggle);
 
 	// Rewind and fast forward
-	$("#transcript").bind("keydown", "ctrl+h", rewind_30);	
+	$("#transcript").bind("keydown", "ctrl+h", rewind_30);
+	$("#transcript").bind("keydown", "meta+h", rewind_30);
 	$("#transcript").bind("keydown", "ctrl+j", rewind);	
+	$("#transcript").bind("keydown", "meta+j", rewind);
 	$("#transcript").bind("keydown", "ctrl+k", fast_forward);
+	$("#transcript").bind("keydown", "meta+k", fast_forward);
 	$("#transcript").bind("keydown", "ctrl+l", fast_forward_30);
+	$("#transcript").bind("keydown", "meta+l", fast_forward_30);
 
 	// Jump to beginning/end
 	$("#transcript").bind("keydown", "ctrl+0", jump_to_beginning);
+	$("#transcript").bind("keydown", "meta+0", jump_to_beginning);
 	$("#transcript").bind("keydown", "ctrl+9", jump_to_end);
+	$("#transcript").bind("keydown", "meta+9", jump_to_end);
 
 	// Volume controls
 	$("#transcript").bind("keydown", "ctrl+1", inc_volume);
+	$("#transcript").bind("keydown", "meta+1", inc_volume);
 	$("#transcript").bind("keydown", "ctrl+2", dec_volume);
+	$("#transcript").bind("keydown", "meta+2", dec_volume);
 
 	$("ul#files li").click(function() {
 		load_file($(this).html());
